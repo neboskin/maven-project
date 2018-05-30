@@ -8,7 +8,6 @@ public class Greeter {
   public Greeter() {
 
   }
-
 /**
 * @param someone name
 * @return String with hello and name
