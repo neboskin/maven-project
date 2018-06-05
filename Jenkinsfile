@@ -14,7 +14,7 @@ stages {
      
            }
    }
-      stage 'deploy' {
+      stage ('deploy') {
  
           steps { 
                    build job: 'deploy-to-stage'
