@@ -15,8 +15,9 @@ stages {
            }
    }
       stage ('deploy') {
-          timeout(time:5,unit:'days'){input message:"Check to proceed" } 
-          steps { 
+          steps {
+           timeout(time:5,unit:'days'){input message:"Check to proceed" } 
+
                    build job: 'deploy-to-stage'
               }
    }
