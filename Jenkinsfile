@@ -9,7 +9,7 @@ stages {
       
       success {
            echo "Starting archiving"  
-           archiveArtifacts artifacts:**/target/*.war 
+           archiveArtifacts artifacts:'**/target/*.war' 
               }
      
            }
