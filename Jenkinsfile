@@ -1,5 +1,9 @@
 pipeline{
 agent any
+parameters {
+   string(name:'staging', defaultValue:'127.0.0.1', description:'Deploy to staging')
+}
+triggers {poolSCM('* * * * *') }
 tools { maven 'mvn_local'}
 stages {
   stage ('build') { 
@@ -19,8 +23,7 @@ stages {
            timeout(time:5, unit:'DAYS'){
                  input message:"Check to proceed" 
                 } 
-
-                   build job: 'deploy-to-stage'
+                   sh 'cp **/*.war /home/kubik/Jenkins/apache-tomcat-9.0.8/webapps/'
               }
    }
   
