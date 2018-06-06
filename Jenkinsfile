@@ -20,9 +20,6 @@ stages {
    }
       stage ('deploy') {
           steps {
-          # timeout(time:5, unit:'DAYS'){
-          #       input message:"Check to proceed" 
-          #       } 
                    sh 'cp -r **/target/*.war /home/kubik/Jenkins/apache-tomcat-9.0.8/webapps/'
               }
    }
