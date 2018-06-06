@@ -3,7 +3,7 @@ agent any
 parameters {
    string(name:'staging', defaultValue:'127.0.0.1', description:'Deploy to staging')
 }
-triggers {poolSCM('* * * * *') }
+triggers {pollSCM('* * * * *') }
 tools { maven 'mvn_local'}
 stages {
   stage ('build') { 
